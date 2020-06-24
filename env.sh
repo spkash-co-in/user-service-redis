@@ -1,0 +1,2 @@
+export env_redis_hosts=localhost
+export env_redis_port=6379

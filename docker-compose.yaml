@@ -1,0 +1,15 @@
+version: "3"
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  user-service:
+    build: .
+    depends_on:
+      - redis
+    ports:
+      - "8080:8080"
+    environment:
+      env_redis_hosts: redis
+      env_redis_port: 6379
